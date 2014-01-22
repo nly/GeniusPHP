@@ -17,7 +17,6 @@ final class Cache
     {
         $this->arrayConfig = Genius::$_config['cache'];
         $this->arrayConfig['cache_dir'] = ROOT_PATH . APP_PATH . '/' . $this->arrayConfig['cache_dir'];
-        var_dump($this->arrayConfig);
     }
 
     /**
