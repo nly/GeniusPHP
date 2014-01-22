@@ -3,7 +3,7 @@
 /* 数据库配置 */
 $CONFIG['system']['db'] = array(
     'database_type' =>  'mysql',
-    'database_name' =>  'myblog',
+    'database_name' =>  'test',
     'server'        =>  'localhost',
     'username'      =>  'root',
     'password'      =>  'root',
@@ -38,11 +38,11 @@ $CONFIG['system']['cache'] = array(
 $CONFIG['system']['template'] = array(
     'suffix' => '.html', // 模版文件后缀
     'compileDir' => 'Runtime/Template_c', //编译后的存放目录
-    'cache_html' => false, // 是否编译成静态的html文件
+    'cache_html' => FALSE, // 是否编译成静态的html文件
     'suffix_cache' => '.htm', // 设置编译文件后缀
     'cache_time' => '7200', // 更新时间
-    'php_turn' => true, // 是否支持原生php代码
-    'debug' => false // 调试模式
+    'php_turn' => TRUE, // 是否支持原生php代码
+    'debug' => FALSE // 调试模式
 );
 
 
