@@ -244,8 +244,8 @@ final class Compile
      */
     public function c_staticFile()
     {
-        $this->content = preg_replace('#\{load (.*?)\.css\}#', '<link type="text/css" rel="stylesheet" href="\\1.css' . '?t=' . time() . '" />', $this->content);
-        $this->content = preg_replace('#\{load (.*?)\.js\}#', '<script type="text/javascript" src="\\1.js' . '?t=' . time() . '"></script>', $this->content);
+        $this->content = preg_replace('#\{load (.*?)\.css\}#', '<link type="text/css" rel="stylesheet" href="$1.css' . '?t=' . time() . '" />', $this->content);
+        $this->content = preg_replace('#\{load (.*?)\.js\}#', '<script type="text/javascript" src="$1.js' . '?t=' . time() . '"></script>', $this->content);
     }
 
     public function __set($name, $value)
