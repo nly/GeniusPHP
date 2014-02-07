@@ -1,5 +1,21 @@
 <p>这是一个模板文件</p>
+
 <p>{$name}</p>
+
+
 <?php
     echo date('Y-m-d H-i:s');
 ?>
+
+
+{foreach $arr}
+<br/>
+{k}---{v}
+{/foreach}
+
+
+{if $condition == TRUE}
+真
+{else}
+假
+{/if}

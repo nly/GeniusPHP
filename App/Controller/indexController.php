@@ -9,6 +9,8 @@ class indexController extends Controller
         $model->test();
         
         $this->assign('name', 'niulingyun');
+        $this->assign('condition', FALSE);
+        $this->assign('arr', array(1,2,3,4,5));
         $this->display('index');
     }
 }
