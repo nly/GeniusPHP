@@ -206,7 +206,7 @@ final class Compile
         $this->content = file_get_contents($this->template);
         if ($config['php_turn'] === false) {
             $this->T_P[] = "#<\?(php)(.+?)\?>#is";
-            $this->T_R[] = "&lt;? '\\1' '\\2'? &gt;";
+            $this->T_R[] = "&lt;? '$1' '$2'? &gt;";
         }
         $this->T_P[] = "#\{\\$([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)\}#";
         $this->T_P[] = "#\{(loop|foreach) \\$([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)\}#i";
@@ -217,12 +217,12 @@ final class Compile
         $this->T_P[] = "#\{else\}#i";
         $this->T_P[] = "#\{(\#|\*)(.*?)(\#|\*)\}#";
         
-        $this->T_R[] = "<?php echo \$this->value['\\1']; ?>";
-        $this->T_R[] = "<?php foreach((array)\$this->value['\\2'] as \$k=>\$v){ ?>";
+        $this->T_R[] = "<?php echo \$this->value['$1']; ?>";
+        $this->T_R[] = "<?php foreach((array)\$this->value['$2'] as \$k=>\$v){ ?>";
         $this->T_R[] = "<?php } ?>";
-        $this->T_R[] = "<?php echo \$\\1; ?>";
-        $this->T_R[] = "<?php if(\\1){ ?>";
-        $this->T_R[] = "<?php }elseif('\\2'){ ?>";
+        $this->T_R[] = "<?php echo \$$1; ?>";
+        $this->T_R[] = "<?php if($1){ ?>";
+        $this->T_R[] = "<?php }elseif('$2'){ ?>";
         $this->T_R[] = "<?php }else{ ?>";
         $this->T_R[] = "";
     }
